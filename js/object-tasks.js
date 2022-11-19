@@ -1,4 +1,6 @@
-console.groupCollapsed("1 - https://edabit.com/challenge/nuXdWHAoHv9y38sn7");
+console.groupCollapsed(
+  "1 - https://edabit.com/challenge/nuXdWHAoHv9y38sn7 \n instruction: You will be given an array of drinks, \n with each drink being an object with two properties: name and price. \n Create a function that has the drinks array as an argument and return \n the drinks objects sorted by price in ascending order."
+);
 {
   // funkcijos deklaracija
   function sortDrinkByPrice(drinks) {
@@ -25,7 +27,7 @@ console.groupCollapsed("1 - https://edabit.com/challenge/nuXdWHAoHv9y38sn7");
 }
 console.groupEnd();
 
-console.groupCollapsed("2 - https://edabit.com/challenge/9KEKJG5PZTFmG3Zau");
+console.groupCollapsed("2 - https://edabit.com/challenge/9KEKJG5PZTFmG3Zau \n Given three arguments ⁠— an object obj of the stolen items, \n the pets name and a value ⁠— return an object with that name and value in it (as key-value pairs).");
 {
   // funkcijos deklaracija
   function addName(obj, name, value) {
@@ -55,7 +57,7 @@ console.groupCollapsed("2 - https://edabit.com/challenge/9KEKJG5PZTFmG3Zau");
 }
 console.groupEnd();
 
-console.groupCollapsed("3 - https://edabit.com/challenge/48EJWLhF224na8po3");
+console.groupCollapsed("3 - https://edabit.com/challenge/48EJWLhF224na8po3 \n Try finding your ancestors and offspring with code. \n Create a function that takes a number x and a character y (\"m\" for male, \"f\" for female), \n and returns the name of an ancestor (m/f) or descendant (m/f). \n If the number is negative, return the related ancestor. \n If positive, return the related descendant.\n You are generation 0. In the case of 0 (male or female), return \"me!\".");
 {
   // funkcijos deklaracija
   function generation(x, y) {
@@ -98,7 +100,7 @@ console.groupCollapsed("3 - https://edabit.com/challenge/48EJWLhF224na8po3");
 }
 console.groupEnd();
 
-console.groupCollapsed("4 - https://edabit.com/challenge/i6YqzHcSiPiEQKjeX");
+console.groupCollapsed("4 - https://edabit.com/challenge/i6YqzHcSiPiEQKjeX \n Given an array of scrabble tiles, create a function that outputs \n the maximum possible score a player can achieve by summing up the total number \n of points for all the tiles in their hand. Each hand contains 7 scrabble tiles.");
 {
   // funkcijos deklaracija
   function maximumScore(tileHand) {
@@ -137,7 +139,7 @@ console.groupCollapsed("4 - https://edabit.com/challenge/i6YqzHcSiPiEQKjeX");
 }
 console.groupEnd();
 
-console.groupCollapsed("5 - https://edabit.com/challenge/8s2jy9hR2TAeQinKD");
+console.groupCollapsed("5 - https://edabit.com/challenge/8s2jy9hR2TAeQinKD \n The insurance guy calls again and apologizes. \n They found another policy made by your spouse, but this one is limited to cover a particular maximum in losses \n (for example, 50,000€). You send a bill to your spouse for the difference you lost.\n Given an object of the stolen items and a limit,\n return the difference between the total value of those items and the limit of the policy.");
 {
   // funkcijos deklaracija
   function calculateDifference(obj, limit) {
@@ -165,7 +167,7 @@ console.groupCollapsed("5 - https://edabit.com/challenge/8s2jy9hR2TAeQinKD");
 }
 console.groupEnd();
 
-console.groupCollapsed("6 - https://edabit.com/challenge/pPNAs5PvB3WvnDwDM");
+console.groupCollapsed("6 - https://edabit.com/challenge/pPNAs5PvB3WvnDwDM \n Write a function that converts an object into an array, \n where each element represents a key-value pair in the form of an array.");
 {
   // funkcijos deklaracija
   function toArray(obj) {
@@ -191,7 +193,7 @@ console.groupCollapsed("6 - https://edabit.com/challenge/pPNAs5PvB3WvnDwDM");
 }
 console.groupEnd();
 
-console.groupCollapsed("7 - https://edabit.com/challenge/QXWM2oo7rQNiyDsip");
+console.groupCollapsed("7 - https://edabit.com/challenge/QXWM2oo7rQNiyDsip \n Given an object of how many more pages each ink color can print,\n output the maximum number of pages the printer can print before any of the colors run out.");
 {
   // funkcijos deklaracija
   function inkLevels(inks) {
@@ -219,7 +221,7 @@ console.groupCollapsed("7 - https://edabit.com/challenge/QXWM2oo7rQNiyDsip");
 }
 console.groupEnd();
 
-console.groupCollapsed("8 - https://edabit.com/challenge/pLNavsePxJ87t9Nak");
+console.groupCollapsed("8 - https://edabit.com/challenge/pLNavsePxJ87t9Nak \n You just returned home to find your mansion has been robbed! \n Given an object of the stolen items, return the total amount of the burglary (number). \n If nothing was robbed, return the string \"Lucky you!\".");
 {
   // funkcijos deklaracija
   function calculateLosses(obj) {
@@ -227,7 +229,7 @@ console.groupCollapsed("8 - https://edabit.com/challenge/pLNavsePxJ87t9Nak");
     for (let i = 0; i < Object.keys(obj).length; i += 1) {
       const currentValue = Object.values(obj)[i];
       result += currentValue;
-      console.log("inner",result);
+      console.log("inner", result);
     }
     if (result > 0) {
       return result;

@@ -4,7 +4,7 @@
     * su for ciklu
 */
 
-const numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
+const cyclesNumbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
 
 console.groupCollapsed("WHILE");
 {
@@ -224,133 +224,133 @@ console.groupCollapsed("WHILE");
   }
   console.groupEnd();
   console.groupCollapsed(
-    "20. Atspausdinkite <numbers> masyvo elementus nuo pirmo iki paskutinio"
+    "20. Atspausdinkite <cyclesNumbers> masyvo elementus nuo pirmo iki paskutinio"
   );
   {
     let i = 0;
-    while (i < numbers.length) {
-      console.log(numbers[i]);
+    while (i < cyclesNumbers.length) {
+      console.log(cyclesNumbers[i]);
       i++;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "21. Atspausdinkite <numbers> masyvo elementus nuo 3 iki paskutinio"
+    "21. Atspausdinkite <cyclesNumbers> masyvo elementus nuo 3 iki paskutinio"
   );
   {
     let i = 2;
-    while (i < numbers.length) {
-      console.log(numbers[i]);
+    while (i < cyclesNumbers.length) {
+      console.log(cyclesNumbers[i]);
       i++;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "22. Atspausdinkite <numbers> masyvo elementus nuo 2 iki prieš paskutinio"
+    "22. Atspausdinkite <cyclesNumbers> masyvo elementus nuo 2 iki prieš paskutinio"
   );
   {
     let i = 1;
-    while (i < numbers.length - 1) {
-      console.log(numbers[i]);
+    while (i < cyclesNumbers.length - 1) {
+      console.log(cyclesNumbers[i]);
       i++;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "23. Atspausdinkite <numbers> masyvo elementus nuo paskutinio iki pirmo"
+    "23. Atspausdinkite <cyclesNumbers> masyvo elementus nuo paskutinio iki pirmo"
   );
   {
-    let i = numbers.length - 1;
+    let i = cyclesNumbers.length - 1;
     while (i >= 0) {
-      console.log(numbers[i]);
+      console.log(cyclesNumbers[i]);
       i--;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "24. Atspausdinkite <numbers> masyvo elementus nuo paskutinio iki antro"
+    "24. Atspausdinkite <cyclesNumbers> masyvo elementus nuo paskutinio iki antro"
   );
   {
-    let i = numbers.length - 1;
+    let i = cyclesNumbers.length - 1;
     while (i > 0) {
-      console.log(numbers[i]);
+      console.log(cyclesNumbers[i]);
       i--;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "25. Atspausdinkite <numbers> masyvo elementus nuo prieš paskutinio iki trečio"
+    "25. Atspausdinkite <cyclesNumbers> masyvo elementus nuo prieš paskutinio iki trečio"
   );
   {
-    let i = numbers.length - 1;
+    let i = cyclesNumbers.length - 1;
     while (i > 1) {
-      console.log(numbers[i]);
+      console.log(cyclesNumbers[i]);
       i--;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "26. Atspausdinkite <numbers> masyvo kas antrą elementą iš kairės į dešinę"
+    "26. Atspausdinkite <cyclesNumbers> masyvo kas antrą elementą iš kairės į dešinę"
   );
   {
     let i = 0;
-    while (i < numbers.length) {
-      console.log(numbers[i]);
+    while (i < cyclesNumbers.length) {
+      console.log(cyclesNumbers[i]);
       i += 2;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "27. Atspausdinkite <numbers> masyvo kas trečią elementą iš kairės į dešinę"
+    "27. Atspausdinkite <cyclesNumbers> masyvo kas trečią elementą iš kairės į dešinę"
   );
   {
     let i = 0;
-    while (i < numbers.length) {
-      console.log(numbers[i]);
+    while (i < cyclesNumbers.length) {
+      console.log(cyclesNumbers[i]);
       i += 3;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "28. Atspausdinkite <numbers> masyvo kas antrą elementą iš kairės į dešinę, pradedant trečiu"
+    "28. Atspausdinkite <cyclesNumbers> masyvo kas antrą elementą iš kairės į dešinę, pradedant trečiu"
   );
   {
     let i = 2;
-    while (i < numbers.length) {
-      console.log(numbers[i]);
+    while (i < cyclesNumbers.length) {
+      console.log(cyclesNumbers[i]);
       i += 2;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "29. Atspausdinkite <numbers> masyvo kas antrą elementą iš dešinės"
+    "29. Atspausdinkite <cyclesNumbers> masyvo kas antrą elementą iš dešinės"
   );
   {
-    let i = numbers.length - 1;
+    let i = cyclesNumbers.length - 1;
     while (i >= 0) {
-      console.log(numbers[i]);
+      console.log(cyclesNumbers[i]);
       i -= 2;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "30. Atspausdinkite <numbers> masyvo kas trečią elementą iš dešinės"
+    "30. Atspausdinkite <cyclesNumbers> masyvo kas trečią elementą iš dešinės"
   );
   {
-    let i = numbers.length - 1;
+    let i = cyclesNumbers.length - 1;
     while (i >= 0) {
-      console.log(numbers[i]);
+      console.log(cyclesNumbers[i]);
       i -= 3;
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "31. Atspausdinkite <numbers> masyvo kas antrą elementą iš dešinės, pradedant prieš prieš paskutiniu"
+    "31. Atspausdinkite <cyclesNumbers> masyvo kas antrą elementą iš dešinės, pradedant prieš prieš paskutiniu"
   );
   {
-    let i = numbers.length - 2;
+    let i = cyclesNumbers.length - 2;
     while (i >= 0) {
-      console.log(numbers[i]);
+      console.log(cyclesNumbers[i]);
       i -= 2;
     }
   }
@@ -538,110 +538,110 @@ console.groupCollapsed("FOR");
   }
   console.groupEnd();
   console.groupCollapsed(
-    "20. Atspausdinkite <numbers> masyvo elementus nuo pirmo iki paskutinio"
+    "20. Atspausdinkite <cyclesNumbers> masyvo elementus nuo pirmo iki paskutinio"
   );
   {
-    for (let i = 0; i < numbers.length; i++) {
-      console.log(numbers[i]);
+    for (let i = 0; i < cyclesNumbers.length; i++) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "21. Atspausdinkite <numbers> masyvo elementus nuo 3 iki paskutinio"
+    "21. Atspausdinkite <cyclesNumbers> masyvo elementus nuo 3 iki paskutinio"
   );
   {
-    for (let i = 2; i < numbers.length; i++) {
-      console.log(numbers[i]);
+    for (let i = 2; i < cyclesNumbers.length; i++) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "22. Atspausdinkite <numbers> masyvo elementus nuo 2 iki prieš paskutinio"
+    "22. Atspausdinkite <cyclesNumbers> masyvo elementus nuo 2 iki prieš paskutinio"
   );
   {
-    for (let i = 1; i < numbers.length - 1; i++) {
-      console.log(numbers[i]);
+    for (let i = 1; i < cyclesNumbers.length - 1; i++) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "23. Atspausdinkite <numbers> masyvo elementus nuo paskutinio iki pirmo"
+    "23. Atspausdinkite <cyclesNumbers> masyvo elementus nuo paskutinio iki pirmo"
   );
   {
-    for (let i = numbers.length - 1; i >= 0; i--) {
-      console.log(numbers[i]);
+    for (let i = cyclesNumbers.length - 1; i >= 0; i--) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "24. Atspausdinkite <numbers> masyvo elementus nuo paskutinio iki antro"
+    "24. Atspausdinkite <cyclesNumbers> masyvo elementus nuo paskutinio iki antro"
   );
   {
-    for (let i = numbers.length - 1; i > 0; i--) {
-      console.log(numbers[i]);
+    for (let i = cyclesNumbers.length - 1; i > 0; i--) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "25. Atspausdinkite <numbers> masyvo elementus nuo prieš paskutinio iki trečio"
+    "25. Atspausdinkite <cyclesNumbers> masyvo elementus nuo prieš paskutinio iki trečio"
   );
   {
-    for (let i = numbers.length - 1; i > 1; i--) {
-      console.log(numbers[i]);
+    for (let i = cyclesNumbers.length - 1; i > 1; i--) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "26. Atspausdinkite <numbers> masyvo kas antrą elementą iš kairės į dešinę"
+    "26. Atspausdinkite <cyclesNumbers> masyvo kas antrą elementą iš kairės į dešinę"
   );
   {
-    for (let i = 0; i < numbers.length; i += 2) {
-      console.log(numbers[i]);
+    for (let i = 0; i < cyclesNumbers.length; i += 2) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "27. Atspausdinkite <numbers> masyvo kas trečią elementą iš kairės į dešinę"
+    "27. Atspausdinkite <cyclesNumbers> masyvo kas trečią elementą iš kairės į dešinę"
   );
   {
-    for (let i = 0; i < numbers.length; i += 3) {
-      console.log(numbers[i]);
+    for (let i = 0; i < cyclesNumbers.length; i += 3) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "28. Atspausdinkite <numbers> masyvo kas antrą elementą iš kairės į dešinę, pradedant trečiu"
+    "28. Atspausdinkite <cyclesNumbers> masyvo kas antrą elementą iš kairės į dešinę, pradedant trečiu"
   );
   {
-    for (let i = 2; i < numbers.length; i += 2) {
-      console.log(numbers[i]);
+    for (let i = 2; i < cyclesNumbers.length; i += 2) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "29. Atspausdinkite <numbers> masyvo kas antrą elementą iš dešinės"
+    "29. Atspausdinkite <cyclesNumbers> masyvo kas antrą elementą iš dešinės"
   );
   {
-    for (let i = numbers.length - 1; i >= 0; i -= 2) {
-      console.log(numbers[i]);
+    for (let i = cyclesNumbers.length - 1; i >= 0; i -= 2) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "30. Atspausdinkite <numbers> masyvo kas trečią elementą iš dešinės"
+    "30. Atspausdinkite <cyclesNumbers> masyvo kas trečią elementą iš dešinės"
   );
   {
-    for (let i = numbers.length - 1; i >= 0; i -= 3) {
-      console.log(numbers[i]);
+    for (let i = cyclesNumbers.length - 1; i >= 0; i -= 3) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();
   console.groupCollapsed(
-    "31. Atspausdinkite <numbers> masyvo kas antrą elementą iš dešinės, pradedant prieš prieš paskutiniu"
+    "31. Atspausdinkite <cyclesNumbers> masyvo kas antrą elementą iš dešinės, pradedant prieš prieš paskutiniu"
   );
   {
-    for (let i = numbers.length - 2; i >= 0; i -= 2) {
-      console.log(numbers[i]);
+    for (let i = cyclesNumbers.length - 2; i >= 0; i -= 2) {
+      console.log(cyclesNumbers[i]);
     }
   }
   console.groupEnd();

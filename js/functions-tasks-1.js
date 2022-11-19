@@ -17,9 +17,9 @@ console.groupCollapsed('2. Parašykite funkciją, kuri pašalina pirmą masyvo e
   function removeAndReturnFirstArrayElement(x){
     return x.shift();
   }
-  console.log(sampleArray);
+  console.log("array before function:",sampleArray);
   console.log(removeAndReturnFirstArrayElement(sampleArray));
-  console.log(sampleArray);
+  console.log("array after function:",sampleArray);
 }
 console.groupEnd();
 
@@ -32,7 +32,6 @@ console.groupCollapsed('3. Parašykite funkciją, kuri grąžina paskutinį masy
   }
   console.log(sampleArray);
   console.log(returnLastArrayElement(sampleArray));
-  console.log(sampleArray);
 }
 console.groupEnd();
 
@@ -43,9 +42,9 @@ console.groupCollapsed('4. Parašykite funkciją, kuri pašalina paskutinį masy
   function returnLastArrayElement(x){
     return x.pop();
   }
-  console.log(sampleArray);
+  console.log("array before function:",sampleArray);
   console.log(returnLastArrayElement(sampleArray));
-  console.log(sampleArray);
+  console.log("array after function:",sampleArray);
 }
 console.groupEnd();
 
