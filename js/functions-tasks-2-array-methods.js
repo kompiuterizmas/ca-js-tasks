@@ -1,22 +1,19 @@
 // ----------------------Užduotys--------------------------
-const numbers = [
+const numbers3 = [
   1, 2, -2, 6, -5, 9, 1.02, 45, -69, 77, -12, 2, 8, -2, -4, 59, 7, -3,
 ];
 
 console.group("1. Padauginti masyvo narius iš 2 ir išsaugoti naujame masyve");
 console.log("---");
 {
-  function mulArrBy2(arr) {
-    // ... code
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      result[i] = arr[i] + arr[i];
-    }
-    return result;
+  // ... code
+  function mulArrBy2(el) {
+    return el + el;
   }
+  let newNumbers = numbers3.map(mulArrBy2);
   console.log({
-    numbers,
-    result: mulArrBy2(numbers),
+    numbers3,
+    result: newNumbers,
   });
 }
 console.log("---");
@@ -26,17 +23,14 @@ console.log();
 console.group("2. Pakelti masyvo narius kvadratu ir išsaugoti naujame masyve");
 console.log("---");
 {
-  function powerArrBy2(arr) {
-    // ... code
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      result[i] = arr[i] * arr[i];
-    }
-    return result;
+  // ... code
+  function powerArrBy2(el) {
+    return el * el;
   }
+  let newNumbers = numbers3.map(powerArrBy2);
   console.log({
-    numbers,
-    result: powerArrBy2(numbers),
+    numbers3,
+    result: newNumbers,
   });
 }
 console.log("---");
@@ -48,17 +42,14 @@ console.group(
 );
 console.log("---");
 {
-  function mulArrElementsByIndex(arr) {
-    // ... code
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      result[i] = arr[i] * i;
-    }
-    return result;
+  // ... code
+  function mulArrElementsByIndex(el, index) {
+    return el * index;
   }
+  let newNumbers = numbers3.map(mulArrElementsByIndex);
   console.log({
-    numbers,
-    result: mulArrElementsByIndex(numbers),
+    numbers3,
+    result: newNumbers,
   });
 }
 console.log("---");
@@ -70,17 +61,11 @@ console.log("---");
 {
   function filterPositives(arr) {
     // Jūsų kodas
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] > 0) {
-        result.push(arr[i]);
-      }
-    }
-    return result;
+    return arr.filter((e) => e > 0);
   }
   console.log({
-    numbers,
-    result: filterPositives(numbers),
+    numbers3,
+    result: filterPositives(numbers3),
   });
 }
 console.log("---");
@@ -92,17 +77,11 @@ console.log("---");
 {
   function filterNegatives(arr) {
     // Jūsų kodas
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] < 0) {
-        result.push(arr[i]);
-      }
-    }
-    return result;
+    return arr.filter((e) => e < 0);
   }
   console.log({
-    numbers,
-    result: filterNegatives(numbers),
+    numbers3,
+    result: filterNegatives(numbers3),
   });
 }
 console.log("---");
@@ -114,17 +93,11 @@ console.log("---");
 {
   function filterEquals(arr) {
     // Jūsų kodas
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] % 2 == 0) {
-        result.push(arr[i]);
-      }
-    }
-    return result;
+    return arr.filter((e) => e % 2 === 0);
   }
   console.log({
-    numbers,
-    result: filterEquals(numbers),
+    numbers3,
+    result: filterEquals(numbers3),
   });
 }
 console.log("---");
@@ -136,17 +109,11 @@ console.log("---");
 {
   function filterOdds(arr) {
     // Jūsų kodas
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] % 2 == 1 || arr[i] % 2 == -1) {
-        result.push(arr[i]);
-      }
-    }
-    return result;
+    return arr.filter((e) => e % 2 === 1 || e % 2 === -1);
   }
   console.log({
-    numbers,
-    result: filterOdds(numbers),
+    numbers3,
+    result: filterOdds(numbers3),
   });
 }
 console.log("---");
@@ -158,22 +125,14 @@ console.group(
 );
 console.log("---");
 {
-  function arrAbsoluteValues(arr) {
+  function arrAbsoluteValues(number) {
     // ... code
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] > 0) {
-        result.push(arr[i]);
-      } else {
-        result.push(arr[i] * -1);
-      }
-    }
-    return result;
+    return Math.abs(number);
   }
-
+  const newNumbers = numbers3.map(arrAbsoluteValues);
   console.log({
-    numbers,
-    result: arrAbsoluteValues(numbers),
+    numbers3,
+    result: newNumbers,
   });
 }
 console.log("---");
@@ -185,17 +144,14 @@ console.group(
 );
 console.log("---");
 {
-  function powArrElementsByIndex(arr) {
+  function powArrElementsByIndex(number, i) {
     // Jūsų kodas
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      result[i] = arr[i] ** i;
-    }
-    return result;
+    return number ** i;
   }
+  const numbersPoweredByIndex = numbers3.map(powArrElementsByIndex);
   console.log({
-    numbers,
-    result: powArrElementsByIndex(numbers),
+    numbers3,
+    result: numbersPoweredByIndex,
   });
 }
 console.log("---");
@@ -205,19 +161,14 @@ console.log();
 console.group("10. Atrinkti tik natūralių skaičių masyvą");
 console.log("---");
 {
-  function filterNaturals(arr) {
+  function filterNaturals(number) {
     // Jūsų kodas
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] % 1 == 0 && arr[i] > 0) {
-        result.push(arr[i]);
-      }
-    }
-    return result;
+    return number % 1 === 0 && number > 0;
   }
+  const naturalNumbers = numbers3.filter(filterNaturals);
   console.log({
-    numbers,
-    result: filterNaturals(numbers),
+    numbers3,
+    result: naturalNumbers,
   });
 }
 console.log("---");
@@ -229,25 +180,26 @@ console.group(
 );
 console.log("---");
 {
-  function absArrElements(arr) {
+  function absArrElements(number) {
     // Jūsų kodas
-    let result = [];
-    for (i = 0; i < arr.length; i++) {
-      remainder = arr[i]%1;
-      wholeNumber = arr[i] - remainder;
-      if(remainder <= 0.5 && remainder >= -0.5){
-        result.push(wholeNumber);
-      }else if(remainder > 0.5){
-        result.push(wholeNumber + 1);
-      }else{
-        result.push(wholeNumber - 1);
-      }
-    }
-    return result;
+    return Math.round(number);
+
+    // remainder = number%1;
+    // wholeNumber = number - remainder;
+    // if(remainder === 0){
+    //   return number;
+    // }else if(remainder <= 0.5 && remainder >= -0.5){
+    //   return wholeNumber;
+    // }else if(remainder > 0.5){
+    //   return wholeNumber + 1;
+    // }else{
+    //   return wholeNumber - 1;
+    // }
   }
+  const wholeNumbers = numbers3.map(absArrElements);
   console.log({
-    numbers,
-    result: absArrElements(numbers),
+    numbers3,
+    result: wholeNumbers,
   });
 }
 console.log("---");
@@ -258,6 +210,7 @@ console.log("---");
 {
   function filterEverySecond(arr) {
     //  Jūsų kodas
+    // regular iteration is the best approach
     let result = [];
     for (i = 1; i < arr.length; i += 2) {
       result.push(arr[i]);
@@ -265,8 +218,8 @@ console.log("---");
     return result;
   }
   console.log({
-    numbers,
-    result: filterEverySecond(numbers),
+    numbers3,
+    result: filterEverySecond(numbers3),
   });
 }
 console.log("---");
@@ -277,6 +230,7 @@ console.log("---");
 {
   function filterEveryFifth(arr) {
     //  Jūsų kodas
+    // regular iteration is the best approach
     let result = [];
     for (i = 4; i < arr.length; i += 5) {
       result.push(arr[i]);
@@ -284,8 +238,8 @@ console.log("---");
     return result;
   }
   console.log({
-    numbers,
-    result: filterEveryFifth(numbers),
+    numbers3,
+    result: filterEveryFifth(numbers3),
   });
 }
 console.log("---");
@@ -296,16 +250,11 @@ console.group(
 );
 console.log("---");
 {
-  function printArr(arr) {
+  function printArr(number, index) {
     // ... code
-    for (i = 0; i < arr.length; i++) {
-      // const index = arr.indexOf(arr[i]);
-      const value = arr[i];
-      // console.log(`[${index}] => ${value}`);
-      console.log(`[${i}] => ${value}`);
-    }
+    console.log(`[${index}] => ${number}`);
   }
-  printArr(numbers);
+  numbers3.forEach(printArr);
 }
 console.log("---");
 console.groupEnd();
@@ -315,17 +264,11 @@ console.group(
 );
 console.log("---");
 {
-  function sumArr(arr) {
-    // Jūsų kodas
-    let result = 0;
-    for (i = 0; i < arr.length; i++) {
-      result += arr[i];
-    }
-    return result;
-  }
+  // Jūsų kodas
+  const sumOfNumbers = numbers3.reduce((sum, el) => sum + el);
   console.log({
-    numbers,
-    result: sumArr(numbers)
+    numbers3,
+    result: sumOfNumbers,
   });
 }
 console.log("---");
@@ -336,19 +279,11 @@ console.group(
 );
 console.log("---");
 {
-  function avgArr(arr) {
-    // Jūsų kodas
-    let result = 0;
-    for (i = 0; i < arr.length; i++) {
-      result += arr[i];
-    }
-    result /= arr.length;
-    return result;
-  }
-
+  // Jūsų kodas
+  const avgNumber = numbers3.reduce((sum, el) => sum + el / numbers3.length);
   console.log({
-    numbers,
-    result: avgArr(numbers)
+    numbers3,
+    result: avgNumber,
   });
 }
 console.log("---");
@@ -361,18 +296,11 @@ console.log("---");
 {
   function arrMax(arr) {
     //  Jūsų kodas
-    let result = arr[0];
-    for (i = 1; i < arr.length; i++) {
-      if(result < arr[i]){
-        result = arr[i];
-      };
-    }
-    return result;
+    return Math.max(...arr);
   }
-
   console.log({
-    numbers,
-    result: arrMax(numbers)
+    numbers3,
+    result: arrMax(numbers3)
   });
 }
 console.log("---");
@@ -385,18 +313,12 @@ console.log("---");
 {
   function arrMin(arr) {
     //  Jūsų kodas
-    let result = arr[0];
-    for (i = 0; i < arr.length; i++) {
-      if(result > arr[i]){
-        result = arr[i];
-      };
-    }
-    return result;
+    return Math.min(...arr);
   }
 
   console.log({
-    numbers,
-    result: arrMin(numbers)
+    numbers3,
+    result: arrMin(numbers3)
   });
 }
 console.log("---");

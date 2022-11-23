@@ -229,7 +229,6 @@ console.groupCollapsed("8 - https://edabit.com/challenge/pLNavsePxJ87t9Nak \n Yo
     for (let i = 0; i < Object.keys(obj).length; i += 1) {
       const currentValue = Object.values(obj)[i];
       result += currentValue;
-      console.log("inner", result);
     }
     if (result > 0) {
       return result;
