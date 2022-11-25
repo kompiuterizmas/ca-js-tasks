@@ -28,6 +28,7 @@ const flats = [
       { title: "virtuvė", area: 18 },
       { title: "miegamasis", area: 12 },
       { title: "miegamasis2", area: 16 },
+      { title: "miegamasis2", area: 19 },
     ],
     city: "Kaunas",
     price: 120000,
@@ -64,66 +65,58 @@ const flats = [
   },
 ];
 
-// ------------------------------ Be anoniminių funkcijų ---------------------
 console.group("1. Atspausdinkite kiekvieno buto adresą su miestu");
 // '<address>, <city>'
 {
-  function printAddressAndCity({ address, city }) {
+  const printAddressAndCity = ({ address, city }) =>
     console.log(`${address}, ${city}`);
-  }
   flats.forEach(printAddressAndCity);
 }
 console.groupEnd();
 
-console.group("2. Sukurkite masyvą iš kiekvieno buto kambarių skaičiaus");
-// [5, 18, 4, ...]
+console.group("2. Sukurkite masyvą iš butų kamarių skaičiaus");
+// [4, 5, 3, 3, 3, 3]
 {
-  function roomCount({ rooms }) {
-    return rooms.length;
-  }
-  const roomsCount = flats.map(roomCount);
+  const roomsCount = flats.map(({ rooms }) => rooms.length);
   console.log(roomsCount);
 }
 console.groupEnd();
 
-console.group("3. Suformuokite kiekvieno buto plotų masyvą");
-// [5, 18, 4, ...]
+console.group("3. Suformuokite butų plotų masyvą");
 {
-  function flatArea({ rooms }) {
-    function sum(result, { area }) {
-      return (result += area);
-    }
-    return rooms.reduce(sum, 0);
-  }
-  const flatsArea = flats.map(flatArea);
+  // const flatsAreas = flats.map((flat) => /* return */ flat.rooms
+  //   .reduce((prevRoomsAreaSum, room) => /* return */ prevRoomsAreaSum + room.area, 0)
+  // );
+
+  // const flatsAreas2 = flats.map(function (flat) {
+  //   return flat.rooms.reduce(function (prevRoomsAreaSum, room) {
+  //     return prevRoomsAreaSum + room.area
+  //   }, 0)
+  // });
+  // console.log(flatsAreas);
+  // console.log(flatsAreas2);
+
+  const flatsArea = flats.map(({ rooms }) =>
+    rooms.reduce((sum, { area }) => sum + area, 0)
+  );
   console.log(flatsArea);
 }
 console.groupEnd();
 
-// ------------------------------ Su anoniminėmis funkcijomis ---------------------
 console.group("4. Atrinkite 4 kambarių ir dedesnius butus");
 // [{...}, {...}]
 {
-  const largeFlats = flats.filter(function ({ rooms }) {
-    return rooms.length >= 4;
-  });
+  const largeFlats = flats.filter(({ rooms }) => rooms.length >= 4);
   console.log(largeFlats);
 }
 console.groupEnd();
 
 console.group("5. Apskaičiuokite visų butų bendrą plotą");
 {
-  let entireFlatsArea = 0;
-  flats.forEach(function (everyFlat) {
-    entireFlatsArea += everyFlat.rooms.reduce(function (
-      entireFlatsArea,
-      { area }
-    ) {
-      return area + entireFlatsArea;
-    },
-    entireFlatsArea);
-  });
-
+  const entireFlatsArea = flats.reduce(
+    (sum, { rooms }) => (sum += rooms.reduce((sum, { area }) => area + sum, 0)),
+    0
+  );
   console.log(entireFlatsArea);
 }
 console.groupEnd();
@@ -132,14 +125,15 @@ console.group(
   "6. Atrinkite 3 kambarių butus iš Kauno, kurių kaina mažesnė nei 100 000"
 );
 {
-  const cheapFlatsInKaunas = flats.filter(function ({ city, price, rooms }) {
-    return city === "Kaunas" && price <= 100000 && rooms.length === 3;
-  });
+  const cheapFlatsInKaunas = flats.filter(
+    ({ city, price, rooms }) =>
+      city === "Kaunas" && price <= 100000 && rooms.length === 3
+  );
   console.log(cheapFlatsInKaunas);
 }
 console.groupEnd();
 
-console.group("7. Permorkuokite butus formatu pateiktu komentaruose");
+console.group("7. Perforkuokite butus formatu pateiktu komentaruose");
 /*
     Masyvas sudarytas iš
     {
@@ -152,10 +146,11 @@ console.group("7. Permorkuokite butus formatu pateiktu komentaruose");
     }
   */
 {
-  const reformattedFlats = flats.map(function ({ ...props }) {
-    entireFlatArea = props.rooms.reduce(function (entireArea, { area }) {
-      return entireArea + area;
-    }, 0);
+  const reformattedFlats = flats.map(({ ...props }) => {
+    entireFlatArea = props.rooms.reduce(
+      (entireArea, { area }) => entireArea + area,
+      0
+    );
     return {
       address: `${props.address}, ${props.city}`,
       city: props.city,
@@ -174,19 +169,19 @@ console.group(
   "8. Atrinkite butus, kurie turi nors vieną kambarį, didesnį nei 19 kvadratų"
 );
 {
-  const flatsWithBigRooms = flats.filter(function ({ rooms }) {
-    return (
-      rooms.filter(function ({ area }) {
-        return area > 19;
-      }).length > 0
-    );
-  });
+  const flatsWithBigRooms = flats.filter(
+    ({ rooms }) => rooms.filter(({ area }) => area > 19).length > 0
+  );
   console.log(flatsWithBigRooms);
 }
 console.groupEnd();
 
 console.group("9. Apskaičiuokite visų būtų kainos vidurkį,");
-
+{
+  const overageFlatPrice =
+    flats.reduce((sum, { price }) => sum + price, 0) / flats.length;
+  console.log(overageFlatPrice);
+}
 console.groupEnd();
 
 console.group("10. Apskaičiuokite visų būtų kainą už kvadratą");
@@ -196,5 +191,11 @@ console.group("10. Apskaičiuokite visų būtų kainą už kvadratą");
 //  1000                     2000                     -> 1500
 // 20 - 20 000;           30 - 60 000; -> 80 000/50   -> 1600 // butų kvadrato kaina
 //  1000                    2000                      -> 1500 // butų kvadartų kainų vidurkis
-
+{
+  const flatsSquarePrice = flats.map(({ ...props }) => 
+    props.price / props.rooms.reduce((entireArea, { area }) => entireArea + area, 0),);
+    const overageSquarePrice = flatsSquarePrice.reduce((sum, el)=>sum+el,0)/flats.length;
+  console.log('square prices of all flats:',flatsSquarePrice);
+  console.log('overage square price:',overageSquarePrice);
+}
 console.groupEnd();
