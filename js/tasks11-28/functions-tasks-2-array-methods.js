@@ -208,18 +208,15 @@ console.groupEnd();
 console.group("12. Atrinkti kas antrą elementą");
 console.log("---");
 {
-  function filterEverySecond(arr) {
-    //  Jūsų kodas
-    // regular iteration is the best approach
-    let result = [];
-    for (i = 1; i < arr.length; i += 2) {
-      result.push(arr[i]);
-    }
-    return result;
+  //  Jūsų kodas
+  function filterEverySecond(_value, index) {
+    return (index + 1) % 2 === 0;
   }
+  const everySecondElement = numbers3.filter(filterEverySecond);
+
   console.log({
     numbers3,
-    result: filterEverySecond(numbers3),
+    result: everySecondElement,
   });
 }
 console.log("---");
@@ -228,18 +225,13 @@ console.groupEnd();
 console.group("13. Atrinkti kas penktą elementą");
 console.log("---");
 {
-  function filterEveryFifth(arr) {
-    //  Jūsų kodas
-    // regular iteration is the best approach
-    let result = [];
-    for (i = 4; i < arr.length; i += 5) {
-      result.push(arr[i]);
-    }
-    return result;
+  function filterEveryFifth(_value, index) {
+    return (index + 1) % 5 === 0;
   }
+  const everyFifthElement = numbers3.filter(filterEveryFifth);
   console.log({
     numbers3,
-    result: filterEveryFifth(numbers3),
+    result: everyFifthElement,
   });
 }
 console.log("---");
@@ -300,7 +292,7 @@ console.log("---");
   }
   console.log({
     numbers3,
-    result: arrMax(numbers3)
+    result: arrMax(numbers3),
   });
 }
 console.log("---");
@@ -318,7 +310,7 @@ console.log("---");
 
   console.log({
     numbers3,
-    result: arrMin(numbers3)
+    result: arrMin(numbers3),
   });
 }
 console.log("---");
