@@ -1,4 +1,4 @@
-const numbersData = [2, 4, -7, 2, 5, 6, 1, 2, 8, 4, -9, 2, 2, 4, 5, 1, 2];
+const numbersData = [4, -7, 2, 5, 6, 1, 2, 8, 4, -9, 2, 2, 4, 5, 1, 2];
 //                   0  1   2  3  4  5  6  7  8  9  10 11 12 13 14 15 16
 
 // !!! Visas funkcijas atlikite kopijuodami orginalų masyvą, tam kad nepažeisti duomenų !!!
@@ -57,16 +57,16 @@ console.group("5. Sukurkite funkciją, kuri po kiekvieno dvejeto įdėtų 777");
   const numbers = numbersData.slice();
 
   const indexOfRequestedValue = (value, previousIndex, array) =>
-    array.lastIndexOf(value, previousIndex);
+    array.lastIndexOf(value, previousIndex-1);
 
   let iterator = numbers.length;
   while (iterator > 0) {
-    let index = indexOfRequestedValue(2, iterator - 1, numbers);
-    if (index < 0) {
+    iterator = indexOfRequestedValue(2, iterator, numbers);
+    if (iterator < 0) {
       break;
     }
-    numbers.splice(index + 1, 0, 777);
-    iterator = index;
+    numbers.splice(iterator + 1, 0, 777);
+    // iterator = index;
   }
   console.log(numbers);
   // function
