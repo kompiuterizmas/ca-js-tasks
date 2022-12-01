@@ -213,7 +213,7 @@ console.groupEnd();
 
 console.groupCollapsed("5. - https://edabit.com/challenge/Hgb38yhWGwJCMHbRQ");
 console.log(
-    `%c task description:
+  `%c task description:
     Your task is to create a Circle constructor that creates a circle with a radius provided by an argument. The circles constructed must have two methods getArea() (PI*r^2) and getPerimeter() (2*PI*r) which give both respective areas and perimeter (circumference).
 
     For help with this class, I have provided you with a Rectangle constructor which you can use as a base example.
@@ -232,60 +232,62 @@ console.log(
   `color:blue`
 );
 {
-    class Rectangle {
-        constructor(sideA, sideB) {
-          this.sideA = sideA
-          this.sideB = sideB
-        }
-        getArea(){return this.sideA*this.sideB}
-        getPerimeter(){return (this.sideA + this.sideB) *2}
-      }
-      
-      
-      class Circle {
-          constructor(r){
-            this.r = r
-          }
-          getArea(){
-            return (Math.PI*this.r**2);
-          }
-          getPerimeter(){
-            return (2*Math.PI*this.r);
-          }
-      }
-      
-      function round(number) {
-        var factor = Math.pow(10, 5);
-        return Math.round(number * factor) / factor;
-      }
-      let circo = new Circle(20);
-      console.log('request for: 1256.63706');
-      console.log(round(circo.getArea()));
-      console.log('request for: 125.66371');
-      console.log(round(circo.getPerimeter()));
-      let circo1 = new Circle(2);
-      console.log('request for: 12.56637');
-      console.log(round(circo1.getArea()));
-      console.log('request for: 12.56637');
-      console.log(round(circo1.getPerimeter()));
-      let circo2 = new Circle(4.4);
-      console.log('request for: 60.82123');
-      console.log(round(circo2.getArea()));
-      console.log('request for:  27.64602');
-      console.log(round(circo2.getPerimeter()));
-      let randomInt = round(Math.floor(Math.random() * Math.floor(200)));
-      //scroll down for spoilers that are hard to use
-      console.log('additional random requests:');
-      let circo3 = new Circle(randomInt);
-      console.log(round(circo3.getArea()), round(Math.PI*Math.pow(randomInt,2)));
-      console.log(round(circo3.getPerimeter()), round(2*Math.PI*randomInt));
-      
+  class Rectangle {
+    constructor(sideA, sideB) {
+      this.sideA = sideA;
+      this.sideB = sideB;
+    }
+    getArea() {
+      return this.sideA * this.sideB;
+    }
+    getPerimeter() {
+      return (this.sideA + this.sideB) * 2;
+    }
+  }
+
+  class Circle {
+    constructor(r) {
+      this.r = r;
+    }
+    getArea() {
+      return Math.PI * this.r ** 2;
+    }
+    getPerimeter() {
+      return 2 * Math.PI * this.r;
+    }
+  }
+
+  function round(number) {
+    var factor = Math.pow(10, 5);
+    return Math.round(number * factor) / factor;
+  }
+  let circo = new Circle(20);
+  console.log("request for: 1256.63706");
+  console.log(round(circo.getArea()));
+  console.log("request for: 125.66371");
+  console.log(round(circo.getPerimeter()));
+  let circo1 = new Circle(2);
+  console.log("request for: 12.56637");
+  console.log(round(circo1.getArea()));
+  console.log("request for: 12.56637");
+  console.log(round(circo1.getPerimeter()));
+  let circo2 = new Circle(4.4);
+  console.log("request for: 60.82123");
+  console.log(round(circo2.getArea()));
+  console.log("request for:  27.64602");
+  console.log(round(circo2.getPerimeter()));
+  let randomInt = round(Math.floor(Math.random() * Math.floor(200)));
+  //scroll down for spoilers that are hard to use
+  console.log("additional random requests:");
+  let circo3 = new Circle(randomInt);
+  console.log(round(circo3.getArea()), round(Math.PI * Math.pow(randomInt, 2)));
+  console.log(round(circo3.getPerimeter()), round(2 * Math.PI * randomInt));
 }
 console.groupEnd();
 
 console.groupCollapsed("6. - https://edabit.com/challenge/qNMtrtizgssAQqP2b");
 console.log(
-    `%c task description:
+  `%c task description:
     Write a class called Name and create the following attributes given a first name and last name (as fname and lname):
 
     An attribute called fullname which returns the first and last names.
@@ -293,45 +295,48 @@ console.log(
 
 Remember to allow the attributes fname and lname to be accessed individually as well.
 `,
-`color:blue`
+  `color:blue`
 );
 {
   // ... code
   class Name {
-	constructor(fname, lname){
-        this.fname = fname.substring(0,1).toUpperCase()+fname.substring(1).toLowerCase(),
-        this.lname = lname.substring(0,1).toUpperCase()+lname.substring(1).toLowerCase(),
-        this.fullname = this.fname+' '+this.lname,
-        this.initials = this.fname.substr(0,1)+'.'+this.lname.substr(0,1)
+    constructor(fname, lname) {
+      (this.fname =
+        fname.substring(0, 1).toUpperCase() + fname.substring(1).toLowerCase()),
+        (this.lname =
+          lname.substring(0, 1).toUpperCase() +
+          lname.substring(1).toLowerCase()),
+        (this.fullname = this.fname + " " + this.lname),
+        (this.initials =
+          this.fname.substr(0, 1) + "." + this.lname.substr(0, 1));
     }
+  }
+  a1 = new Name("john", "SMITH");
 
-}
-a1 = new Name("john", "SMITH")
+  console.log('request: "John"');
+  console.log(a1.fname);
+  console.log('request: "Smith"');
+  console.log(a1.lname);
+  console.log('request: "John Smith"');
+  console.log(a1.fullname);
+  console.log('request: "J.S"');
+  console.log(a1.initials);
 
-console.log('request: "John"')
-console.log(a1.fname)
-console.log('request: "Smith"')
-console.log(a1.lname)
-console.log('request: "John Smith"')
-console.log(a1.fullname)
-console.log('request: "J.S"')
-console.log(a1.initials)
-
-a2 = new Name("sARah", "fRolliE")
-console.log('request: "Sarah"')
-console.log(a2.fname)
-console.log('request: "Frollie"')
-console.log(a2.lname)
-console.log('request: "Sarah Frollie"')
-console.log(a2.fullname)
-console.log('request: "S.F"')
-console.log(a2.initials)
+  a2 = new Name("sARah", "fRolliE");
+  console.log('request: "Sarah"');
+  console.log(a2.fname);
+  console.log('request: "Frollie"');
+  console.log(a2.lname);
+  console.log('request: "Sarah Frollie"');
+  console.log(a2.fullname);
+  console.log('request: "S.F"');
+  console.log(a2.initials);
 }
 console.groupEnd();
 
 console.groupCollapsed("7. - https://edabit.com/challenge/HKmJFmZZCX53ff4ke");
 console.log(
-    `%c task description:
+  `%c task description:
     Create a function which takes an array of instances from the class IceCream and returns the sweetness value of the sweetest ice cream.
 
 Sweetness is calculated from the flavor and number of sprinkles. Each sprinkle has a sweetness value of 1, and the sweetness values for the flavors are as follows:
@@ -344,10 +349,140 @@ Chocolate	10
 
 You'll be given instance properties in the order flavor, numSprinkles.
     `,
-`color:blue`
+  `color:blue`
 );
 {
-  // ... code
+  function sweetestIcecream(arr) {
+    highestSweetness = 0;
+    flavorSweetness = 0;
+    arr.forEach((el) => {
+      switch (el.flavor) {
+        case "Vanilla":
+          flavorSweetness = 5;
+          break;
+        case "ChocolateChip":
+          flavorSweetness = 5;
+          break;
+        case "Strawberry":
+          flavorSweetness = 10;
+          break;
+        case "Chocolate":
+          flavorSweetness = 10;
+          break;
+        default:
+          flavorSweetness = 0;
+      }
+      if (flavorSweetness + el.numSprinkles > highestSweetness) {
+        highestSweetness = flavorSweetness + el.numSprinkles;
+      }
+    });
+    return highestSweetness;
+  }
+  class IceCream {
+    constructor(flavor, numSprinkles) {
+      this.flavor = flavor;
+      this.numSprinkles = numSprinkles;
+    }
+  }
+
+  ice1 = new IceCream("Chocolate", 13);
+  ice2 = new IceCream("Vanilla", 0);
+  ice3 = new IceCream("Strawberry", 7);
+  ice4 = new IceCream("Plain", 18);
+  ice5 = new IceCream("ChocolateChip", 3);
+  ice6 = new IceCream("Chocolate", 23);
+  ice7 = new IceCream("Strawberry", 0);
+  ice8 = new IceCream("Plain", 34);
+  ice9 = new IceCream("Plain", 81);
+  ice10 = new IceCream("Vanilla", 12);
+
+  console.log(sweetestIcecream([ice1, ice2, ice3, ice4, ice5]), 23);
+  console.log(
+    sweetestIcecream([ice7, ice10, ice1, ice6, ice8, ice10, ice2, ice2]),
+    34
+  );
+  console.log(sweetestIcecream([ice10, ice10, ice6, ice8, ice4]), 34);
+  console.log(sweetestIcecream([ice2, ice10, ice6, ice9, ice7]), 81);
+  console.log(
+    sweetestIcecream([ice10, ice6, ice4, ice1, ice7, ice8, ice6]),
+    34
+  );
+  console.log(sweetestIcecream([ice3, ice1]), 23);
+  console.log(sweetestIcecream([ice6, ice7, ice5, ice4, ice3]), 33);
+  console.log(sweetestIcecream([ice4, ice8, ice9]), 81);
+  console.log(sweetestIcecream([ice5, ice7]), 10);
+  console.log(
+    sweetestIcecream([ice5, ice3, ice6, ice2, ice7, ice2, ice7, ice2]),
+    33
+  );
+  console.log(
+    sweetestIcecream([ice1, ice9, ice10, ice9, ice7, ice1, ice9]),
+    81
+  );
+  console.log(sweetestIcecream([ice1, ice4]), 23);
+  console.log(sweetestIcecream([ice7, ice4]), 18);
+  console.log(
+    sweetestIcecream([ice1, ice8, ice6, ice7, ice3, ice2, ice3, ice7]),
+    34
+  );
+  console.log(sweetestIcecream([ice7, ice8, ice4, ice4, ice5, ice1]), 34);
+  console.log(sweetestIcecream([ice10, ice10, ice9, ice4, ice7, ice9]), 81);
+  console.log(sweetestIcecream([ice3, ice10, ice1]), 23);
+  console.log(
+    sweetestIcecream([ice3, ice4, ice7, ice3, ice7, ice10, ice2]),
+    18
+  );
+  console.log(
+    sweetestIcecream([ice5, ice9, ice9, ice9, ice7, ice5, ice9, ice7]),
+    81
+  );
+  console.log(sweetestIcecream([ice4, ice9, ice2]), 81);
+  console.log(sweetestIcecream([ice8, ice2, ice2, ice2, ice4, ice8]), 34);
+  console.log(
+    sweetestIcecream([ice4, ice9, ice4, ice3, ice3, ice2, ice5, ice2]),
+    81
+  );
+  console.log(sweetestIcecream([ice8, ice10, ice5]), 34);
+  console.log(sweetestIcecream([ice10, ice3, ice2, ice1, ice9]), 81);
+  console.log(sweetestIcecream([ice8, ice3, ice4, ice5]), 34);
+  console.log(sweetestIcecream([ice10, ice8, ice6, ice7, ice9, ice4]), 81);
+  console.log(sweetestIcecream([ice5, ice4, ice6, ice6, ice1]), 33);
+  console.log(sweetestIcecream([ice6, ice8, ice2, ice10, ice7, ice10]), 34);
+  console.log(sweetestIcecream([ice1, ice9, ice7, ice3]), 81);
+  console.log(
+    sweetestIcecream([ice7, ice1, ice9, ice6, ice7, ice10, ice2, ice3]),
+    81
+  );
+  console.log(sweetestIcecream([ice5, ice1, ice7, ice6, ice8, ice1, ice8]), 34);
+  console.log(sweetestIcecream([ice10, ice9, ice2, ice4, ice10]), 81);
+  console.log(sweetestIcecream([ice3, ice7, ice10]), 17);
+  console.log(sweetestIcecream([ice10, ice5, ice4]), 18);
+  console.log(sweetestIcecream([ice9, ice2, ice4, ice8, ice3, ice3]), 81);
+  console.log(sweetestIcecream([ice6, ice3, ice9, ice8, ice2, ice6]), 81);
+  console.log(sweetestIcecream([ice10, ice3]), 17);
+  console.log(sweetestIcecream([ice10, ice7, ice5, ice2, ice9]), 81);
+  console.log(sweetestIcecream([ice10, ice10, ice4, ice1, ice9]), 81);
+  console.log(sweetestIcecream([ice9, ice2, ice6, ice4, ice10, ice3]), 81);
+  console.log(
+    sweetestIcecream([ice8, ice10, ice1, ice7, ice8, ice9, ice1]),
+    81
+  );
+  console.log(sweetestIcecream([ice7, ice5, ice3, ice8, ice1, ice9]), 81);
+  console.log(sweetestIcecream([ice2, ice6, ice3]), 33);
+  console.log(sweetestIcecream([ice6, ice6]), 33);
+  console.log(sweetestIcecream([ice9, ice6, ice8, ice3, ice2, ice2]), 81);
+  console.log(sweetestIcecream([ice1, ice3, ice3, ice6]), 33);
+  console.log(sweetestIcecream([ice8, ice6]), 34);
+  console.log(sweetestIcecream([ice1, ice1]), 23);
+  console.log(
+    sweetestIcecream([ice4, ice2, ice3, ice9, ice5, ice10, ice6]),
+    81
+  );
+  console.log(
+    sweetestIcecream([ice10, ice8, ice4, ice3, ice9, ice8, ice1, ice10]),
+    81
+  );
+  console.log(sweetestIcecream([ice5, ice8, ice5]), 34);
 }
 console.groupEnd();
 
@@ -358,13 +493,76 @@ console.groupCollapsed("8. - https://edabit.com/challenge/9zwdrfW99zmdRhibi");
 console.groupEnd();
 
 console.groupCollapsed("9. - https://edabit.com/challenge/7PA4jhWqDYJT4ixLp");
+console.log(
+  `%c task description:
+  Create a class named User and create a way to check the number of users (number of instances) that were created, so that the value can be accessed as a class attribute.
+`,
+  `color:blue`
+);
 {
+  class User {
+    static userCount = 0;
+    userName;
+    constructor(username) {
+      User.userCount += 1;
+      this.username = username;
+    }
+  }
   // ... code
+  console.log(User.userCount, 0)
+
+const u1 = new User("johnsmith10")
+console.log(User.userCount, 1)
+console.log(u1.username, "johnsmith10")
+
+
+const u2 = new User("marysue1989")
+console.log(User.userCount, 2)
+console.log(u2.username, "marysue1989")
+
+const u3 = new User("milan_rodrick")
+console.log(User.userCount, 3)
+console.log(u3.username, "milan_rodrick")
+
+const user4 = new User("joshua_senoron")
+console.log(User.userCount, 4)
+console.log(user4.username, "joshua_senoron")
+
+const user10 = new User("LuckyLootCrate123")
+console.log(User.userCount, 5)
+console.log(user10.username, "LuckyLootCrate123")
 }
 console.groupEnd();
 
 console.groupCollapsed("10. - https://edabit.com/challenge/s5Sz2ovKsvtGxNGgn");
+console.log(
+  `%c task description:
+  Create a Book constructor that has two properties :
+
+    Title
+    Author
+
+and two methods:
+
+    A method named getTitle that returns: "Title: " + the instance title.
+    A method named getAuthor that returns: "Author: " + the instance author.
+
+and instantiate this constructor by creating 3 new books:
+
+    Pride and Prejudice - Jane Austen (PP)
+    Hamlet - William Shakespeare (H)
+    War and Peace - Leo Tolstoy (WP)
+
+The name of the new object instances PP, H, and WP, respectively.
+
+For instance, if I instantiated the following book using this Book constructor function:
+
+    Harry Potter - J.K. Rowling (HP)
+`,
+  `color:blue`
+);
 {
+  
   // ... code
 }
 console.groupEnd();
