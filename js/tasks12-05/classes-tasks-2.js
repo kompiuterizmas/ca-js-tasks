@@ -1,3 +1,4 @@
+'use strict';
 console.groupCollapsed("1. - https://edabit.com/challenge/ZngT4zDckDugt2JGY");
 console.log(
   `%c task description:
@@ -40,9 +41,9 @@ Also, create three functions for the class that returns the following strings:
       return this.name + " weighs " + this.weight + "kg";
     }
   }
-  player1 = new Player("Patrick Mahomes", 24, 188, 104);
-  player2 = new Player("Jimmy Garoppolo", 28, 188, 102);
-  player3 = new Player("Julio Jones", 31, 191, 100);
+  const player1 = new Player("Patrick Mahomes", 24, 188, 104);
+  const player2 = new Player("Jimmy Garoppolo", 28, 188, 102);
+  const player3 = new Player("Julio Jones", 31, 191, 100);
 
   console.log(player1.getAge()); //'Patrick Mahomes is age 24'
   console.log(player1.getHeight()); // 'Patrick Mahomes is 188cm'
@@ -126,10 +127,10 @@ console.log(
       this.fullname = firstname + " " + lastname;
     }
   }
-  emp1 = new Employee("John", "Smith");
-  emp2 = new Employee("Mary", "Sue");
-  emp3 = new Employee("Antony", "Walker");
-  emp4 = new Employee("Joshua", "Senoron");
+  const emp1 = new Employee("John", "Smith");
+  const emp2 = new Employee("Mary", "Sue");
+  const emp3 = new Employee("Antony", "Walker");
+  const emp4 = new Employee("Joshua", "Senoron");
 
   console.log("request for: John");
   console.log(emp1.firstname);
@@ -192,9 +193,9 @@ Create a method in the Person class which returns how another person's age compa
       }
     }
   }
-  p1 = new Person("Samuel", 24);
-  p2 = new Person("Joel", 36);
-  p3 = new Person("Lily", 24);
+  const p1 = new Person("Samuel", 24);
+  const p2 = new Person("Joel", 36);
+  const p3 = new Person("Lily", 24);
 
   console.log("request string: Joel is older than me.");
   console.log(p1.compareAge(p2));
@@ -311,7 +312,7 @@ Remember to allow the attributes fname and lname to be accessed individually as 
           this.fname.substr(0, 1) + "." + this.lname.substr(0, 1));
     }
   }
-  a1 = new Name("john", "SMITH");
+  const a1 = new Name("john", "SMITH");
 
   console.log('request: "John"');
   console.log(a1.fname);
@@ -322,7 +323,7 @@ Remember to allow the attributes fname and lname to be accessed individually as 
   console.log('request: "J.S"');
   console.log(a1.initials);
 
-  a2 = new Name("sARah", "fRolliE");
+  const a2 = new Name("sARah", "fRolliE");
   console.log('request: "Sarah"');
   console.log(a2.fname);
   console.log('request: "Frollie"');
@@ -353,8 +354,8 @@ You'll be given instance properties in the order flavor, numSprinkles.
 );
 {
   function sweetestIcecream(arr) {
-    highestSweetness = 0;
-    flavorSweetness = 0;
+    let highestSweetness = 0;
+    let flavorSweetness = 0;
     arr.forEach((el) => {
       switch (el.flavor) {
         case "Vanilla":
@@ -385,16 +386,16 @@ You'll be given instance properties in the order flavor, numSprinkles.
     }
   }
 
-  ice1 = new IceCream("Chocolate", 13);
-  ice2 = new IceCream("Vanilla", 0);
-  ice3 = new IceCream("Strawberry", 7);
-  ice4 = new IceCream("Plain", 18);
-  ice5 = new IceCream("ChocolateChip", 3);
-  ice6 = new IceCream("Chocolate", 23);
-  ice7 = new IceCream("Strawberry", 0);
-  ice8 = new IceCream("Plain", 34);
-  ice9 = new IceCream("Plain", 81);
-  ice10 = new IceCream("Vanilla", 12);
+  const ice1 = new IceCream("Chocolate", 13);
+  const ice2 = new IceCream("Vanilla", 0);
+  const ice3 = new IceCream("Strawberry", 7);
+  const ice4 = new IceCream("Plain", 18);
+  const ice5 = new IceCream("ChocolateChip", 3);
+  const ice6 = new IceCream("Chocolate", 23);
+  const ice7 = new IceCream("Strawberry", 0);
+  const ice8 = new IceCream("Plain", 34);
+  const ice9 = new IceCream("Plain", 81);
+  const ice10 = new IceCream("Vanilla", 12);
 
   console.log(sweetestIcecream([ice1, ice2, ice3, ice4, ice5]), 23);
   console.log(
@@ -487,8 +488,76 @@ You'll be given instance properties in the order flavor, numSprinkles.
 console.groupEnd();
 
 console.groupCollapsed("8. - https://edabit.com/challenge/9zwdrfW99zmdRhibi");
+console.log(
+  `%c task description:
+  Given an int, figure out how many ones, threes and nines you could fit into the number. You must create a class. You will make variables (class.ones, class.threes, class.nines) to do this.
+Examples
+
+let n1 = new OnesThreesNines(5)
+n1.nines ➞ 0
+
+n1.ones ➞ 5
+
+n1.threes ➞ 1
+  `,
+  `color:blue`
+);
 {
   // ... code
+  const probs = [{
+    num:0,
+    which:'ones',
+    expect:0
+  },{
+    num:1,
+    which:'threes',
+    expect:0
+  },{
+    num:2,
+    which:'nines',
+    expect:0
+  },{
+    num:3,
+    which:'ones',
+    expect:3
+  },{
+    num:4,
+    which:'threes',
+    expect:1
+  },{
+    num:10,
+    which:'nines',
+    expect:1
+  },{
+    num:13,
+    which:'ones',
+    expect:13
+  },{
+    num:15,
+    which:'threes',
+    expect:5
+  },{
+    num:17,
+    which:'nines',
+    expect:1
+  },{
+    num:20,
+    which:'nines',
+    expect:2
+  }];
+
+  class OnesThreesNines {
+    constructor(num){
+      this.num = num;
+      this.nines = Math.floor(this.num/9);
+      this.threes = Math.floor(this.num/3);
+      this.ones = Math.floor(this.num/1);
+    }
+  }
+  probs.forEach(prob=>{
+      let testInstance = new OnesThreesNines(prob.num);
+      console.log(testInstance[prob.which], prob.expect)
+  })
 }
 console.groupEnd();
 
@@ -562,7 +631,38 @@ For instance, if I instantiated the following book using this Book constructor f
   `color:blue`
 );
 {
-  
+  class Book {
+    title;
+    author;
+    constructor(title, author){
+      this.title = title;
+      this.author = author;
+    }
+    getTitle(){
+      return `Title: ${this.title}`
+    }
+    getAuthor(){
+      return `Author: ${this.author}`
+    }
+  }
   // ... code
+const PP = new Book('Pride and Prejudice', 'Jane Austen');
+const H = new Book('Hamlet', 'William Shakespeare');
+const WP = new Book('War and Peace', 'Leo Tolstoy');
+
+console.log(PP.title, "Pride and Prejudice")
+console.log(PP.author, "Jane Austen")
+console.log(PP.getTitle(), 'Title: Pride and Prejudice')
+console.log(PP.getAuthor(), 'Author: Jane Austen')
+
+console.log(H.title, "Hamlet")
+console.log(H.author, "William Shakespeare")
+console.log(H.getTitle(), 'Title: Hamlet')
+console.log(H.getAuthor(), 'Author: William Shakespeare')
+
+console.log(WP.title, "War and Peace")
+console.log(WP.author, "Leo Tolstoy")
+console.log(WP.getTitle(), 'Title: War and Peace')
+console.log(WP.getAuthor(), 'Author: Leo Tolstoy')
 }
 console.groupEnd();
