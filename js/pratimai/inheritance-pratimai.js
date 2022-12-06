@@ -20,40 +20,51 @@ class Document {
     this.currentPage = 1;
   }
   printCover() {
-    console.log(Document.title, Document.dateCreated, Document.author);
+    console.log(`${this.title}, kurį parašė ${this.author}, ${this.dateCreated.substring(0,4)} metais, ${this.dateCreated.substring(5,7)} mėnesio ${this.dateCreated.substring(8,10)} dieną`);
   }
-  nextPage(){
-    if(!this.currentPage-1 < this.pages.length){
+  nextPage() {
+    if (this.currentPage < this.pages.length) {
       this.currentPage += 1;
     }
   }
-  prevPage(){
-    if(this.currentPage > 1){
+  prevPage() {
+    if (this.currentPage > 1) {
       this.currentPage -= 1;
     }
   }
-  printPage(){
-    console.log(this.pages[this.currentPage-1]);
+  printPage(pageNo) {
+    if (pageNo) {
+      this.currentPage = pageNo;
+    }
+    console.log(this.pages[this.currentPage - 1]);
   }
-  printBook(){
-    console.group(`${this.title} by ${this.author}, ${this.dateCreated}`);
+  printBook() {
+    this.printCover()
+    console.groupCollapsed('expand console to view pages');
     {
-      pages.forEach(page => {
-        
-        console.groupCollapsed();
-        {
-          console.log(page.content);
-        }
-        console.groupEnd();
-      });
+      for (let i = 0; i < this.pages.length; i+=1) {
+        this.printPage(i+1);
+      }
     }
     console.groupEnd();
   }
 }
 
+const testDocument = new Document('kazkoks dokumentas', '2000-11-11', 'biurokratas', [
+  'pirmas puslapis su tekstu',
+  'antras puslapis su tekstu',
+  'trečias puslapis su tekstu',
+  'ketvirtas puslapis su tekstu',
+  'penktas puslapis su tekstu',
+  'šeštas puslapis su tekstu',
+  'septintas puslapis su tekstu',
+]);
+
 // Pavyzdžius pateikite čia
 console.group("0. Sukurkite klasę Page, kuri turėtų savybes: content");
 {
+  const testContent = new Page('yukfhvbhjklbjk');
+  console.log(testContent);
 }
 console.groupEnd();
 
@@ -62,14 +73,16 @@ console.group(
 );
 // Kiekvienas puslapis turi būti Page klasės objektas susijęs su klase Document kompozicijos ryšiu. Document.pages -> Array<Page> [Page, Page, Page]
 // Konstruktoriaus metu sukurkite visus knygos duomenis.
+console.log(testDocument);
 {
 }
 console.groupEnd();
 
 console.group(
-  "2. Klasėjė Document sukurkite metodą <printCover>, kuris atspausdintų savybes <title, dateCreated, author> konsolėje"
+  "2. Klasėje Document sukurkite metodą <printCover>, kuris atspausdintų savybes <title, dateCreated, author> konsolėje"
 );
 {
+  testDocument.printCover();
 }
 console.groupEnd();
 
@@ -78,6 +91,16 @@ console.group(
 );
 // Įvertinkite pradinius ir paskutinius puslapius. Paskutinio puslapio atveju, vykdant nextPage, nieko nedaryti. Analogiškai su prevPage ir pirmu puslapiu
 {
+  for (let i = 0; i < 10; i++) {
+    console.log('nextPage puslapis prieš komandą:', testDocument.currentPage);
+    testDocument.nextPage();
+    // console.log('nextPage puslapis po komandos:', testDocument.currentPage);
+  }
+  for (let i = 0; i < 4; i++) {
+    console.log('prevPage puslapis prieš komandą:', testDocument.currentPage);
+    testDocument.prevPage();
+    // console.log('prevPage puslapis po komandos:', testDocument.currentPage);
+  }
 }
 console.groupEnd();
 
@@ -85,6 +108,7 @@ console.group(
   "4. Sukurkite metodą <printPage> kuris atspausdintų esamą puslapį"
 );
 {
+  testDocument.printPage();
 }
 console.groupEnd();
 
@@ -92,15 +116,7 @@ console.group(
   "5. Sukurkite metodą <printBook> kuris atspausdintų visus puslapius Ir pavadinimą"
 );
 {
-  console.group("<title> by <author>, <dateCreated>");
-  {
-    console.groupCollapsed("Puslapio numeris");
-    {
-      console.log("Puslapio turinys");
-    }
-    consoel.groupEnd();
-  }
-  console.groupEnd();
+  testDocument.printBook();
 }
 console.groupEnd();
 
