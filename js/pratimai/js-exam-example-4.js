@@ -47,10 +47,13 @@ class Item {
   get weight() {
     return this.#weight;
   }
+    // ToDo - finish this:
   set categories(x) {
-    const result = x.map((el) => typeof el === "string" ? el : null);
-    console.log('bandymas',result.length);
-    console.error("Wrong categories format");
+    if(!x.every((y)=> typeof y === "string")){
+        console.error("Wrong categories format");
+    }else{
+        this.#categories = x;
+    }
   }
   get categories() {
     return this.#weight;
@@ -130,6 +133,7 @@ console.group(
   "5. Inkapsuliuokite savybę <categories>, jog ji būtų masyvas sudarytas iš `string`ų ir parašykite jai get`erį ir set`erį. Naudojant <categories> get`erį turi būti grąžinama privati <categories> masyvo kopija. Naudojant <categories> set`erį turi būt įrašoma masyvo kopija. Pademonstruokite inkapsuliacijos veikimą ir nuorodų nesutapimą po <categories> priskyrimo ir panaudojimo"
 );
 {
+    // ToDo - finish this:
     console.log(
         "wrong request with mixed array",
         new Item({

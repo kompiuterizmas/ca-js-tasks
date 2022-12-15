@@ -1,3 +1,8 @@
+// helper functions:
+// const separateWordsArray = str.trim().split(/\s+/g);
+// const trimmedSentencesArray = separateWordsArray.map((x)=>x.trim());
+// console.log(separateWordsArray);
+
 console.group(
   "21. Sukurkite funkciją, kuri ištrintų pirmą surastą 'a' raidę žodyje ir grąžintų pakeistą žodį"
 );
