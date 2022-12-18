@@ -59,12 +59,13 @@ console.log();
 //    mėgstu pieną , bet medų nelabai.labanakt. -> Mėgstu pieną, bet medų nelabai. Labanakt.
 console.group("30. Sukurkite funkciją, kuri taiso pastraipos klaidas");
 {
-  function capitalizeFirstLetter(str) {
-    // code ...
-    return str[0].toUpperCase() + str.slice(1);
-  }
 
-  function splitIntoSentences(paragraph) {
+  // function capitalizeFirstLetter(str) {
+  //   // code ...
+  //   return str[0].toUpperCase() + str.slice(1);
+  // }
+
+  // function splitIntoSentences(paragraph) {
     /*
       2.1 Atskirti pagal sakinio baigimo ženklus ir juos įsiminti
       2.2 Pašalinti tuščius tarpus iš kairės ir dešinės
@@ -74,29 +75,29 @@ console.group("30. Sukurkite funkciją, kuri taiso pastraipos klaidas");
         separator: [ '.', '?', ... , '!'],
       }
     */
-    let sentences = [];
-    let separators = [];
-    const sentenceArray = paragraph.split(/([.?!])/g);
-    for (let i = 0; i < sentenceArray.length - 1; i += 1) {
-      if (i % 2 === 0) {
-        sentences.push(sentenceArray[i].trim());
-      } else {
-        separators.push(sentenceArray[i]);
-      }
-    }
-    return { sentences, separators };
-  }
+    // let sentences = [];
+    // let separators = [];
+    // const sentenceArray = paragraph.split(/([.?!])/g);
+    // for (let i = 0; i < sentenceArray.length - 1; i += 1) {
+    //   if (i % 2 === 0) {
+    //     sentences.push(sentenceArray[i].trim());
+    //   } else {
+    //     separators.push(sentenceArray[i]);
+    //   }
+    // }
+    // return { sentences, separators };
+  // }
 
-  function reduceEmptySpaces(str) {
+  // function reduceEmptySpaces(str) {
     // Jūsų sugalvota logika, kaip šalinti tarpus prieš kablelį ir kelis tarpus iš eilės
-    return (result = str
-      .replaceAll(/\s+([?.,!])/g, "$1 ")
-      .replaceAll(/(\s+)/g, " ")
-      .trim());
-  }
+  //   return (result = str
+  //     .replaceAll(/\s+([?.,!])/g, "$1 ")
+  //     .replaceAll(/(\s+)/g, " ")
+  //     .trim());
+  // }
 
   // 1.
-  function fixParagraph(paragraph) {
+  // function fixParagraph(paragraph) {
     /*
       2. Pirmiausiai suskirstome į sakinius, naudojant splitIntoSentences: 
             string  ->  {
@@ -108,26 +109,39 @@ console.group("30. Sukurkite funkciją, kuri taiso pastraipos klaidas");
       5. Sujungti sakinius su atitinkamais sakinių skiriamaisiais/baigiamaisiais ženklais
       6. Grąžinti rezultatą.
     */
-    const splittedParagraph = splitIntoSentences(paragraph);
-    const reducedSentences = splittedParagraph.sentences.map((x) =>
-      reduceEmptySpaces(x)
-    );
-    const copitalizedSentences = reducedSentences.map((x) =>
-      capitalizeFirstLetter(x)
-    );
-    let result = "";
-    for (let i = 0; i < copitalizedSentences.length; i += 1) {
-      result += copitalizedSentences[i];
-      result += splittedParagraph.separators[i] + " ";
-    }
-    return result.trim();
+    // const splittedParagraph = splitIntoSentences(paragraph);
+    // const reducedSentences = splittedParagraph.sentences.map((x) =>
+    //   reduceEmptySpaces(x)
+    // );
+    // const copitalizedSentences = reducedSentences.map((x) =>
+    //   capitalizeFirstLetter(x)
+    // );
+    // let result = "";
+    // for (let i = 0; i < copitalizedSentences.length; i += 1) {
+    //   result += copitalizedSentences[i];
+    //   result += splittedParagraph.separators[i] + " ";
+    // }
+    // return result.trim();
+  // }
+ 
+  function fixParagraph(string){
+    console.log("paragraph", paragraph);
+    const reducedSpaces = string.replaceAll(/\s+/g, ' ');
+    console.log("reducedSpaces", reducedSpaces);
+    const correctedCommas = reducedSpaces.replaceAll(/\s*,\s*/g, ', ');
+    console.log("correctedCommas", correctedCommas);
+    const fixedParagraph = correctedCommas.replaceAll(/\s*([.?!])\s*/g, '$1 ').trim();
+    console.log(`fixedParagraph: "${fixedParagraph}"`);
+    const capitalizeFirstSentenceLetter = fixedParagraph.replaceAll(/([.?!]\s)(\w)/g, '$1',(x).toUpperCase());
+    console.log(`capitalizeFirstSentenceLetter: "${capitalizeFirstSentenceLetter}"`);
+    // return capitalizeFirstSentenceLetter;
   }
 
   const paragraph =
-    "    labas , as jonas . Tave      vadina Kęstu? Taip ir žinojau  !    ";
+    "    labas , as jonas . Tave      vadina Kęstu? taip ir žinojau  !    ";
   const fixedParagraph = fixParagraph(paragraph);
-  console.log("paragraph", paragraph);
-  console.log("fixedParagraph", fixedParagraph);
+  // console.log("paragraph", paragraph);
+  // console.log(`fixedParagraph: "${fixedParagraph}"`);
   console.log("---");
 }
 console.groupEnd();
